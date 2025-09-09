@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-<body class=".apu-sarkar bg-green-50 ">
+<body class=".apu-sarkar bg-green-50 flex flex-col min-h-screen">
   <section>
     <div class="flex flex-col sm:flex-row gap-3 justify-between  items-center bg-[#15803D] text-white py-6 px-32">
       <h3 class="text-2xl">Green Earth</h3>
@@ -126,23 +126,30 @@
   </section>
 
 
-  <section class="bg-green-800">
-    <h1 class="font-semibold text-[32px] text-center mb-10 text-white pt-[100px]">Plant a Tree Today</h1>
-    <div class="p-10 bg-green-700 rounded-xl w-[650px] mx-auto">
-      <form class="flex flex-col gap-3 w-full">
+  <section class="bg-green-800 pb-[100px]  flex flex-col items-center">
+    <h1 class="font-semibold text-2xl sm:text-3xl md:text-4xl text-center text-white pt-20 mb-10">
+      Plant a Tree Today
+    </h1>
+
+    <div class="p-8 sm:p-10 bg-green-700 rounded-xl  w-11/12 max-w-md ">
+      <form class="flex flex-col gap-4 w-full">
         <input type="text" placeholder="Enter Your Name" class="input input-sm w-full" />
         <input type="password" placeholder="Enter Your Password" class="input input-sm w-full" />
-        <select id="banck" class="select w-full  bg-[#f4f5f7]">
+
+        <select id="banck" class="select w-full bg-[#f4f5f7]">
           <option disabled selected>Number of Trees</option>
-          <option>013******34</option>
-          <option>017******90</option>
-          <option>019******67</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
         </select>
-        <button class=" py-2 rounded-3xl  text-green-700 bg-yellow-400">Donate Now</button>
+
+        <button class="py-2 rounded-3xl text-green-700 bg-yellow-400 hover:bg-yellow-300 transition">
+          Donate Now
+        </button>
       </form>
     </div>
-
   </section>
+
   <footer class="bg-green-900">
     <p class="text-center text-white py-6">© 2025 Green Earth. All Rights Reserved.</p>
 
