@@ -34,10 +34,6 @@ manzSpner(true)
  
 }
 
-
-
-
-
 const manzSpner = (stastus) => {
   if (stastus == true) {
     document.getElementById("spinnr").classList.remove("hidden")
@@ -49,22 +45,36 @@ const manzSpner = (stastus) => {
 }
 
 const addToCartbttone = (name, price) => {
-  const cartContainer = document.getElementById("cart-container");
+  const cartContainer = document.getElementById("cart-items");
+
   const item = document.createElement("div");
+  item.className = "flex justify-between items-center bg-green-100 rounded-lg p-3 mb-3";
+
   item.innerHTML = `
-    <div class="flex justify-between items-center bg-green-100 rounded-lg p-3 mb-3">
-      <div>
-        <h2 class="font-semibold">${name}</h2>
-        <p>${price} x 1</p>
-      </div>
-      <i class="fa-solid fa-xmark cursor-pointer text-red-600"></i>
+    <div>
+      <h2 class="font-semibold">${name}</h2>
+      <p class="item-price">${parseFloat(price).toFixed(2)}</p>
     </div>
-    
+    <i class="fa-solid fa-xmark cursor-pointer text-red-600"></i>
   `;
+
   item.querySelector("i").addEventListener("click", () => {
     item.remove();
+    updateTotalPrice();
   });
+
   cartContainer.appendChild(item);
+  updateTotalPrice();
+};
+
+
+const updateTotalPrice = () => {
+  let total = 0;
+  document.querySelectorAll(".item-price").forEach(p => {
+    const val = parseFloat(p.innerText);
+    if (!isNaN(val)) total += val;
+  });
+  document.getElementById("total-price").innerText = total.toFixed(2);
 };
 
 
